@@ -22,12 +22,17 @@ div:nth-of-type(3) > ul > li:nth-of-type(8){
 		flex-wrap: nowrap;
 		padding: 1em;
 	}
+	
+	div > ul > li {
+		white-space: nowrap;
+	}
+
 	div > figure {
 		margin: 0;
 		padding: 0;
 	}
 	div > figure > img {
-		width: 1em;
+		width: .5em;
 		height: 100%
 	}
 	div > figure > span {
