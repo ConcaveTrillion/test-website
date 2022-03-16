@@ -26,11 +26,11 @@ div:nth-of-type(3) > ul > li:nth-of-type(8){
 		margin: 0;
 		padding: 0;
 	}
-	div > figure > svg {
+	div > figure > img {
 		width: 1em;
 		height: 100%
 	}
-  div > figure > span {
+	div > figure > span {
 		width: 1em;
 		height: 100%
 	}
