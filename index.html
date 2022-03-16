@@ -2,8 +2,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/, se: https://standardebooks.org/vocab/1.0" xml:lang="en-GB">
 	<head>
 		<title>Bracket Test</title>
-		<link href="../css/core.css" rel="stylesheet" type="text/css"/>
-		<link href="../css/local.css" rel="stylesheet" type="text/css"/>
+		<style>
+			div > ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	position: relative;
+	height: 100%
+}
+
+div:nth-of-type(3) > ul > li:nth-of-type(7){
+	padding-left: 4em;
+	text-indent: -1em;
+}
+div:nth-of-type(3) > ul > li:nth-of-type(8){
+	padding-left: 2em;
+	text-indent: -1em;
+}
+
+@supports ((display: inline-flex) and (transform:scale(1))){
+	div{
+		display: inline-flex;
+		position: relative;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		padding: 1em;
+		height: 100%;
+	}
+	div > figure {
+		margin: 0;
+		padding: 0;
+	}
+	div > figure > svg {
+		width: 1em;
+		height: 100%
+	}
+  div > figure > span {
+		width: 1em;
+		height: 100%
+	}
+	div > span:nth-of-type(1){
+		display: flex;
+  }
+}
+
+@supports ((display: inline-flex) and (transform:scale(1)) and (writing-mode: vertical-lr)){
+	div > span:nth-of-type(1){
+		writing-mode: vertical-rl;
+    justify-content: center;		
+		transform: scale(-1);
+	}
+}
+
+@supports ((display: inline-flex) and (transform:scale(1)) and (not (writing-mode: vertical-lr))){
+	div > span:nth-of-type(1){
+		align-items: center;
+		transform: rotate(-90deg);
+		margin-left: -3.5em;
+		margin-right: -3.5em;
+	}
+}
+
+@supports (not ((display: inline-flex) and (transform:scale(1)))){
+	div > figure {
+		display: none
+	}
+}
+		</style>
 	</head>
 	<body epub:type="bodymatter z3998:non-fiction">
 
