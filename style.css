@@ -20,7 +20,8 @@ div:nth-of-type(3) > ul > li:nth-of-type(8){
 		position: relative;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		padding: 1em;
+		flex-shrink: 0;
+		padding: 1em;		
 	}
 	
 	div > ul > li {
