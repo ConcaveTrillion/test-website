@@ -22,9 +22,6 @@ div.bracketed-list-with-label > ul{
 		padding-left: 2em;
 		text-indent: -1em;
 	}
-	div.bracketed-list-with-label > span:nth-of-type(2):before {
-		content: "> "
-	}
 /*
 }
 */

@@ -49,18 +49,18 @@ div.bracketed-list-with-label > ul{
 @supports (not ((display: inline-flex) and (transform:rotate(-90deg)))){
 	div.bracketed-list-with-label {
 		display: inline-block;
-		padding-right: 1em;
+		padding: 1em;
+		padding-right: 1.5em;
 	}
 
 	div.bracketed-list-with-label > span:nth-of-type(1){
 		display: none;
 	}
 	div.bracketed-list-with-label > span:nth-of-type(2) {
+        display: block;
+        margin-top: 0.5em;
 		padding-left: 2em;
 		text-indent: -1em;
-	}
-	div.bracketed-list-with-label > span:nth-of-type(2):before {
-		content: "> "
 	}
 }
 
