@@ -21,14 +21,14 @@ div.bracketed-list-with-label > ul{
 	
 	div.bracketed-list-with-label > span:nth-of-type(2){
 		position: relative;
-		white-space: nowrap;		
 	}
 	
-	div.bracketed-list-with-label > span:nth-of-type(2) > span{
+	div.bracketed-list-with-label > span:nth-of-type(2) > span{		
+		white-space: nowrap;
 		position: absolute;
 		top: 50%;
 		right: 0;
-		transform: translateY(-50%) translateX(50%) rotate(-90deg) translateY(.5em);
+		transform: translateY(-50%) translateX(50%) rotate(-90deg) translateY(.5em);		
 	}
 
 	/* Customize the width of bracket for larger lists */
