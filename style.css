@@ -1,73 +1,72 @@
+div.bracketed-list-with-label{
+	display: inline-block;
+	padding: 1em;
+	padding-right: 1.5em;
+}
+
 div.bracketed-list-with-label > ul{
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
+}
+
+div.bracketed-list-with-label > span{
+	display: block;
+	margin-top: 1em;
 }
 
 /* Must support flexbox and transform */
-@supports ((display: inline-flex) and (transform:rotate(-90deg))){
+@supports((display: inline-flex) and (display: flex) and (transform: rotate(90deg))){
 	div.bracketed-list-with-label{
 		display: inline-flex;
-		padding: 1em;
-		padding-right: 1.5em;
 	}
 
-	div.bracketed-list-with-label > span:nth-of-type(1){
-		background-image: url(bracket.svg);
-		background-size: cover;
-		min-width: 0.5em;
-		margin-left: .5em;
-	}
-	
-	div.bracketed-list-with-label > span:nth-of-type(2){
+	div.bracketed-list-with-label > ul{
 		position: relative;
 	}
-	
-	div.bracketed-list-with-label > span:nth-of-type(2) > span{		
-		white-space: nowrap;
+
+	div.bracketed-list-with-label > ul::after{
+		content: " ";
+		background-image: url("bracket.svg");		
+		background-size: 100%;
 		position: absolute;
-		top: 50%;
-		right: 0;
-		transform: translateY(-50%) translateX(50%) rotate(-90deg) translateY(.5em);		
+		right: -1.5em;
+		top: 0;
+		width: 1em;
+		height: 100%;		
 	}
 
-	/* Customize the width of bracket for larger lists */
-	div.bracketed-list-with-label:nth-of-type(1) > span:nth-of-type(1){
-		width: 1.25em;
+	div.bracketed-list-with-label > span{
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin-left: 2em;
+		margin-top: 0;
+		transform: rotate(-90deg);
+		white-space: nowrap;
+		width: 1em;		
 	}
 
-	div.bracketed-list-with-label:nth-of-type(2) > span:nth-of-type(1){
-		width: 1.5em;
-	}
-
-	div.bracketed-list-with-label:nth-of-type(3) > span:nth-of-type(1){
+	/* Customize spacing and size for shorter lists */
+	div.bracketed-list-with-label:nth-of-type(3) > ul::after{
 		width: .75em;
 	}
 
-}
-
-@supports (not ((display: inline-flex) and (transform:rotate(-90deg)))){
-	div.bracketed-list-with-label {
-		display: inline-block;
-		padding: 1em;
-		padding-right: 1.5em;
+	div.bracketed-list-with-label:nth-of-type(4) > ul::after{
+		right: -1em;
+		width: .5em;
 	}
-
-	div.bracketed-list-with-label > span:nth-of-type(1){
-		display: none;
-	}
-	div.bracketed-list-with-label > span:nth-of-type(2) {
-        display: block;
-        margin-top: 0.5em;
-		padding-left: 2em;
-		text-indent: -1em;
+	div.bracketed-list-with-label:nth-of-type(4) > span{
+		margin-left: 1.25em;
 	}
 }
 
+/* for testing only */
 div.bracketed-list-with-label:nth-of-type(3) > ul > li:nth-of-type(7){
 	padding-left: 4em;
 	text-indent: -1em;
 }
+
 div.bracketed-list-with-label:nth-of-type(3) > ul > li:nth-of-type(8){
 	padding-left: 2em;
 	text-indent: -1em;
